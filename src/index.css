@@ -1,0 +1,211 @@
+/* === FONT IMPORTS === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* === TAILWIND === */
+@import "tailwindcss";
+
+/* === CSS VARIABLES === */
+:root {
+  --primary: #1E40AF;
+  --primary-light: #3B82F6;
+  --secondary: #9333EA;
+  --text-dark: #111827;
+  --text-light: #6B7280;
+  --bg-light: #F9FAFB;
+  --bg-dark: #1F2937;
+}
+
+/* === BASE STYLES === */
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  color: var(--text-dark);
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* === CATEGORY COLORS (Updated to Look Classy) === */
+.bg-facts { background-color: #2563eb; }
+.text-facts { color: #2563eb; }
+.bg-sports { background-color: #10b981; }
+.text-sports { color: #10b981; }
+.bg-history { background-color: #6366f1; }
+.text-history { color: #6366f1; }
+.bg-tech { background-color: #8b5cf6; }
+.text-tech { color: #8b5cf6; }
+.bg-healthcare { background-color: #ec4899; }
+.text-healthcare { color: #ec4899; }
+
+/* === GRADIENTS AND UTILITIES === */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* === COMPONENT CARD STYLES === */
+.stat-card, .course-card, .alumni-card, .dashboard-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), #fff);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.stat-card:hover,
+.course-card:hover,
+.alumni-card:hover,
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  perspective: 1000px;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03) translateY(-5px);
+}
+
+/* === GALLERY === */
+.gallery-item {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 4/3;
+}
+.gallery-item img {
+  transition: all 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* === BUTTONS === */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* === INPUTS === */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: var(--primary);
+}
+
+/* === NAVIGATION === */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* === LOGIN CONTAINER === */
+.login-container {
+  background: linear-gradient(135deg, #1E40AF, #3B82F6);
+}
+
+/* === DARK MODE === */
+.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.dark .bg-white {
+  background-color: #1F2937 !important;
+  color: #E5E7EB;
+  border-color: #374151;
+}
+
+.dark .text-gray-800 { color: #f3f4f6; }
+.dark .text-gray-600 { color: #d1d5db; }
+.dark .bg-gray-50 { background-color: #111827 !important; }
+
+.dark .course-card, 
+.dark .alumni-card, 
+.dark .dashboard-card {
+  background-color: #0062ec !important;
+  border-color: #374151;
+}
+
+.dark .nav-link::after {
+  background: #60a5fa;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}

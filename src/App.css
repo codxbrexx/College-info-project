@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Updated CSS for the entire college website */
+:root {
+  /* Tailwind will handle these via utility classes, but keep for fallback/clarity */
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --secondary: #10b981;
+  /* Dark/Light variables will be managed by Tailwind's dark mode classes */
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+
+
